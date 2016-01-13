@@ -17,13 +17,53 @@ Plugin 'scrooloose/nerdtree' " file drawer, open with :NERDTreeToggle
 Plugin 'benmills/vimux'
 Plugin 'tpope/vim-fugitive' " the ultimate git helper
 Plugin 'tpope/vim-commentary' " comment/uncomment lines with gcc or gc in visual mode
+Plugin 'christoomey/vim-system-copy'
+Plugin 'christoomey/vim-sort-motion' 
+Plugin 'tpope/vim-surround'
+Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " colorschemes
-Plugin 'chriskempson/base16-vim'
+Plugin 'wei170/badwolf'
 
+" Goyo
+Plugin 'junegunn/goyo.vim'
+Plugin 'junegunn/limelight.vim'
+
+" nerdcommenter
+Plugin 'scrooloose/nerdcommenter'
 " JavaScript plugins
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+
+" EditorConfig
+Plugin 'wei170/editorconfig-vim'
+
+" powerline-font
+Plugin 'wei170/fonts'
+
+"" Powerline 
+"Plugin 'wei170/powerline'
+"
+"" Airline => AWESOME!!!
+"Plugin 'bling/vim-airline'
+"
+"" powerline-shell
+"Plugin 'wei170/powerline-shell'
+"
+" Jellybeans
+Plugin 'nanotech/jellybeans.vim'
+
+" Textobj-entire
+Plugin 'vim-scripts/textobj-entire'
+
+" VIim-unimpaired
+Plugin 'tpope/vim-unimpaired'
+
+" You-complete-mw
+" Plugin 'wei170/YouCompleteMe' 
+
+" Vim-rails
+Plugin 'tpope/vim-rails'
 
 call vundle#end()
 filetype plugin indent on
@@ -78,10 +118,12 @@ syntax on
 set encoding=utf8
 let base16colorspace=256  " Access colors present in 256 colorspace"
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors"
+syntax enable
 set background=dark
-colorscheme delek
+colorscheme badwolf
 
 set number
+set relativenumber 
 
 set autoindent " automatically set indent of new line
 set smartindent
@@ -95,10 +137,6 @@ set laststatus=2 " show the satus line all the time
 map <leader>ev :e! ~/.vimrc<cr> " edit ~/.vimrc
 
 map <leader>wc :wincmd q<cr>
-
-" moving up and down work as you would expect
-nnoremap <silent> j gj
-nnoremap <silent> k gk
 
 " helpers for dealing with other people's code
 nmap \t :set ts=4 sts=4 sw=4 noet<cr>
@@ -142,9 +180,9 @@ nmap <silent> <leader>k :NERDTreeToggle<cr>
 nmap <silent> <leader>y :NERDTreeFind<cr>
 
 " map fuzzyfinder (CtrlP) plugin
-" nmap <silent> <leader>t :CtrlP<cr>
+nmap <silent> <leader>t :CtrlP<cr>
 nmap <silent> <leader>r :CtrlPBuffer<cr>
-let g:ctrlp_map='<leader>t'
+let g:ctrip_map='<leader>t'
 let g:ctrlp_dotfiles=1
 let g:ctrlp_working_path_mode = 'ra'
 
@@ -159,5 +197,91 @@ let g:ctrlp_working_path_mode = 2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Guocheng's stuff
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set clipboard=unnamed
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Color name (:help cterm-colors) or ANSI code
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+
+" Color name (:help gui-colors) or RGB color
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+
+" Default: 0.5
+let g:limelight_default_coefficient = 0.7
+
+" Number of preceding/following paragraphs to include (default: 0)
+let g:limelight_paragraph_span = 1
+
+" Beginning/end of paragraph
+"   When there's no empty line between the paragraphs
+"   and each paragraph starts with indentation
+let g:limelight_bop = '^\s'
+let g:limelight_eop = '\ze\n^\s'
+
+" Highlighting priority (default: 10)
+"   Set it to -1 not to overrule hlsearch
+let g:limelight_priority = -1
+
+"""""""""""""""""
+" Studying
+"""""""""""""""""
+set wildmenu
+set wildmode=full
+
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" To search in the current directory
+set path=.
+
+" Break the Habit of Reaching for the Arrow Keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
+" Remap Line Motion Commands
+nnoremap k gk
+nnoremap gk k
+nnoremap j gj
+nnoremap gj j
+
+" Autoload the matchit plugin
+set nocompatible
+filetype plugin on
+runtime macros/machit.vim
+
+" Paste register 0:yank 1:cut
+
+"  Sets up the (fn)<f5> to toggle the paste option on and off
+set pastetoggle=<f5>
+
+" Enable the 'hidden' Setting Before Running ':argdo' or ':bufdo'
+" source ~/Desktop/Vim\ &\ Tmux\ &\ Webdesign/code/macros/rc.vim
+set nocompatible
+filetype plugin indent on
+set hidden
+if has("autocmd")
+	  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+endif
+
+" Set smartcase => If have uppercase characters, then case sensitive
+set smartcase
+
+" Set hlsearch
+set hlsearch
+
+" Shortcut to Google
+function OpenGoogle()
+	exec "!open http://www.google.com"
+endfunction
+
+noremap <Leader>gg :call OpenGoogle()<CR>
+
+" Cursorline
+set cursorline
+
+" Tag Color
+let g:badwolf_tabline = 2
+
+" Ruler
+set colorcolumn=81

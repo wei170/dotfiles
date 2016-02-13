@@ -5,7 +5,7 @@
 " load plugins from vundle
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let vundle manage vundle
@@ -54,7 +54,7 @@ Plugin 'wei170/fonts'
 Plugin 'nanotech/jellybeans.vim'
 
 " Textobj-entire
-Plugin 'vim-scripts/textobj-entire'
+" Plugin 'vim-scripts/textobj-entire'
 
 " VIim-unimpaired
 Plugin 'tpope/vim-unimpaired'

@@ -54,7 +54,7 @@ Plugin 'wei170/fonts'
 Plugin 'nanotech/jellybeans.vim'
 
 " Textobj-entire
-Plugin 'vim-scripts/textobj-entire'
+" Plugin 'vim-scripts/textobj-entire'
 
 " VIim-unimpaired
 Plugin 'tpope/vim-unimpaired'

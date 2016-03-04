@@ -60,7 +60,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'tpope/vim-unimpaired'
 
 " You-complete-mw
-" Plugin 'wei170/YouCompleteMe' 
+Plugin 'wei170/YouCompleteMe' 
 
 " Vim-rails
 Plugin 'tpope/vim-rails'

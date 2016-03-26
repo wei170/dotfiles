@@ -65,6 +65,9 @@ Plugin 'wei170/YouCompleteMe'
 " Vim-rails
 Plugin 'tpope/vim-rails'
 
+" vim and tmux navigation combo
+Plugin 'christoomey/vim-tmux-navigator'
+
 call vundle#end()
 filetype plugin indent on
 

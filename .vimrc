@@ -288,3 +288,6 @@ let g:badwolf_tabline = 2
 
 " Ruler
 set colorcolumn=81
+
+" Mouse
+set mouse=a

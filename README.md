@@ -1,2 +1,5 @@
 # dotfiles
-test git commit -a
+    cd && wget <LINK> && sh install.sh && rm -f install.sh
+    
+# Git config coming soon!
+    

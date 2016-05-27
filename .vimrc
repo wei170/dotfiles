@@ -60,10 +60,13 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'tpope/vim-unimpaired'
 
 " You-complete-mw
-" Plugin 'wei170/YouCompleteMe' 
+Plugin 'wei170/YouCompleteMe' 
 
 " Vim-rails
 Plugin 'tpope/vim-rails'
+
+" vim and tmux navigation combo
+Plugin 'christoomey/vim-tmux-navigator'
 
 call vundle#end()
 filetype plugin indent on
@@ -285,3 +288,6 @@ let g:badwolf_tabline = 2
 
 " Ruler
 set colorcolumn=81
+
+" Mouse
+set mouse=a

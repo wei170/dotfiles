@@ -1,14 +1,14 @@
 # To-do
 
-- [*] Homebrew install
-- [*] macVim / vim update
-- [*] Bundle install
-- [*] Vundle install
-- [*] zsh install
-- [*] Tmux install
-- [*] iTerm install
+- [X] Homebrew install
+- [X] macVim / vim update
+- [X] Bundle install
+- [X] Vundle install
+- [X] zsh install
+- [X] Tmux install
+- [X] iTerm install
 - [ ] iTerm config (screenshot)
-- [*] ln shell file
+- [X] ln shell file
 - [ ] Check all on another computer
 
 

@@ -4,10 +4,11 @@
 - [X] macVim / vim update
 - [X] Bundle install
 - [X] Vundle install
+- [ ] Vim plugin install
 - [X] zsh install
 - [X] Tmux install
 - [X] iTerm install
-- [ ] iTerm config (screenshot)
+- [X] iTerm config (screenshot)
 - [X] ln shell file
 - [ ] Check all on another computer
 
@@ -127,6 +128,26 @@ Vundle is undergoing an interface change, please stay up to date to get latest c
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
+# Vim Plugin Install
+---
+
+Time to install all the plugins in my .vimrc
+
+First, open the Vim.
+
+Then, type ```:PluginInstall
+```
+
+- [ ] Add the screenshot of install process
+- [ ] Check the YouCompleteMe problem
+
+## Solve the YouCompleteMe problem
+
+When you are installing the plugins, there will a problem
+
+To solve this, you need to navigate to the YouCompleteMe directory
+
+
 # Zsh (Oh My Zsh)
 ---
 
@@ -183,6 +204,12 @@ Install iTerm2:
 
 <a href="https://iterm2.com/downloads/stable/iTerm2-2_1_4.zip">Download here.</a>
 
+If you like the homebrew theme or any other style, like me, you can change the iterm preference
+`⌘,` and navigate to `Profiles`
+
+![Minion](/Users/walterwei/Desktop/Screen Shot 2016-05-31 at 1.51.17 PM.png =600x)
+
+Or, you can draw the `load Presets...` down to `Visit Online Gallery` # I use the Homwbrew theme
 
 # Git config coming soon!
 ---

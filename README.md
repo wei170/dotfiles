@@ -1,7 +1,9 @@
 # To-do
 
 - [X] Homebrew install
+- [ ] sh install.sh
 - [X] macVim / vim update
+- [ ] Xcode install
 - [X] Bundle install
 - [X] Vundle install
 - [ ] Vim plugin install
@@ -19,13 +21,13 @@
 Navigate to your home directory
 
 ```
-cd ~
+$ cd ~
 ```
 
 Clone this git repository to your home directory
 
 ```
-git clone <url_of_this_repository>
+$ git clone <url_of_this_repository>
 ```
 
     
@@ -39,13 +41,13 @@ Homebrew can help you install many widgets in the command lines
 This is cited from homebrew official website: <a href="http://brew.sh">http://brew.sh</a> </br>
 
 ``` 
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
 ## How to use homebrew
 
 ``` 
-brew install <stuff_you_want_to_install> 
+$ brew install <stuff_you_want_to_install> 
 ```
 
 # macVim / vim update
@@ -53,16 +55,16 @@ brew install <stuff_you_want_to_install>
 Upgrade Vim on OSX
 
 ```
-brew install macvim --override-system-vim
+$ brew install macvim --override-system-vim
 # mercurial required - install if you don't already have it.
-brew install mercurial
+$ brew install mercurial
 # install Vim
-brew install vim
+$ brew install vim
 # if /usr/bin is before /usr/local/bin in your $PATH,
 # hide the system Vim so the new version is found first
-sudo mv /usr/bin/vim /usr/bin/vim72
+$ sudo mv /usr/bin/vim /usr/bin/vim72
 # should return /usr/local/bin/vim
-which vim
+$ which vim
 ```
 -- <a href="http://www.prioritized.net/blog/upgrading-vim-on-os-x">Cited from here.</a> </br>
 
@@ -79,21 +81,21 @@ Bundler is an exit from dependency hell, and ensures that the gems you need are 
 If you already install homebrew, you can use it:
 
 ``` 
-brew install bundle
+$ brew install bundle
 ```
 
 OR, you can use:
 
 ```
-gem install bundler
+$ gem install bundler
 ```
 Install all of the required gems from your specified sources:
 
 ```
-bundle install
-git add Gemfile Gemfile.lock
+$ bundle install
+$ git add Gemfile Gemfile.lock
 ```
->> The second command adds the Gemfile and Gemfile.lock to your repository. This ensures that other developers on your app, as well as your deployment environment, will all use the same third-party code that you are using now.
+> The second command adds the Gemfile and Gemfile.lock to your repository. This ensures that other developers on your app, as well as your deployment environment, will all use the same third-party code that you are using now.
 
 Link the bundle in the Vim
 
@@ -125,7 +127,7 @@ Vundle is undergoing an interface change, please stay up to date to get latest c
 ## Install the Vundle
 
 ```
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+$ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 ```
 
 # Vim Plugin Install
@@ -135,19 +137,64 @@ Time to install all the plugins in my .vimrc
 
 First, open the Vim.
 
-Then, type ```:PluginInstall
+Then, type 
+```:PluginInstall
 ```
 
 - [ ] Add the screenshot of install process
 - [ ] Check the YouCompleteMe problem
 
-## Solve the YouCompleteMe problem
+## Solve the YouCompleteMe problem #1
 
 When you are installing the plugins, there will a problem
 
-To solve this, you need to navigate to the YouCompleteMe directory
+To solve this, you need to navigate to the YouCompleteMe directory and
+```
+python install.sh
+```
 
+## Solve the YouCompleteMe problem #2
 
+When you open Vim, there are some errors like this:
+
+![Minion](/Users/walterwei/Desktop/Screen Shot 2016-05-31 at 2.57.52 PM.png =500x)
+
+Check these three things:
+
+* Vim version: ```vim --version``` (it should be 7.4) 
+	* Linux: 
+	* OS X:
+* Python version: ```python ---version``` (it should be 2.7.10)
+* Check if the path of you_complete_me to the python is the right one:
+	* In the shell, type ```which python```, that is the python path you are using
+	* Then open Vim, just type ```return``` to go over the errors, the type ```:echo pyeval( 'paths.PathToPythonInterpreter()' )```
+	* If this two paths are different, add the following lines to your .vimrc
+	
+	```
+	" Fix Python Path (for YCM)
+	let g:ycm_path_to_python_interpreter="/usr/bin/python"
+	```
+* If there is still a problem, that means you need to add the flag ```--enable-unicode=ucs4``` when building python from source.
+
+	```
+	$ cd ~
+	$ wget https://www.python.org/ftp/python/2.7.11/Python-2.7.11.tar.xz
+	$ tar -xvf Python-2.7.11.tar.xz
+	$ cd Python-2.7.11
+	$ ./configure --enable-unicode=ucs4
+	$ make
+	$ make install
+	```
+	
+!!! IMPORTANT: If you are Purdue University Student, using ssh to login the lab computers, you cannot change the python version or any configuration. So you cannot use YouCompleteMe... Just comment the line:63
+	
+	```
+	$ vim ~/dotfile/.vimrc
+	:63
+	gcc
+	ZZ
+	```
+Now, you are good to go!
 # Zsh (Oh My Zsh)
 ---
 
@@ -168,7 +215,7 @@ To learn more, visit ohmyz.sh and follow @ohmyzsh on Twitter. -- <a href="https:
 Oh-My-Zsh is a framework for zsh, the Z shell, so first we need to install zsh:
 
 ```
-brew install zsh
+$ brew install zsh
 ```
 
 If you did NOT installed wget or curl before, then type this line. If you did, skip this! 
@@ -176,12 +223,12 @@ If you did NOT installed wget or curl before, then type this line. If you did, s
 #### via curl
 
 ```
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+$ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 ```
 #### via wget
 
 ```
-sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+$ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 ```
 
 # Tmux
@@ -194,7 +241,7 @@ simple, modern, BSD-licensed alternative to programs such as GNU screen. -- <a h
 ## Install Tmux
 
 ```
-brew install tmux
+$ brew install tmux
 ```
 
 # iTerm

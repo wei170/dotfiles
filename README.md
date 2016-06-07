@@ -30,11 +30,27 @@ Clone this git repository to your home directory
 $ git clone <url_of_this_repository>
 ```
 
+Command line tool for Xcode
+
+```
+$ xcode-select --install
+```
+
+<a href=" https://developer.apple.com/downloads">https://developer.apple.com/downloads</a> or <a href=""https://itunes.apple.com/us/app/xcode/id497799835>Xcode 3</a>
     
 # Homebrew
 ---
 
 Homebrew can help you install many widgets in the command lines
+
+!!! IMPORTANT:
+
+>If your system is Linux, skip this. Everytime you want to install something just type
+
+>
+```
+$ sudo apt-get install <anything_you_want_to_install>
+```
 
 ## Install homebrew
 
@@ -42,6 +58,29 @@ This is cited from homebrew official website: <a href="http://brew.sh">http://br
 
 ``` 
 $ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+## Problems when installing homebrew
+If you successfully install homebrew, skip this.
+
+### Problem 1
+```Illegal variable name.```
+
+You are using ```tcsh```, which does not support ```$()``` as a syntax for command substitution. Change to ```bash``` by just typing ```bash```.
+
+### Problem 2
+```This script requires the user <your_account_name> to be an Administrator...```
+
+If you are one of the Administrators of the computer, add ```sudo ``` and enter your password
+
+``` 
+$ sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+If not, maybe because you are using school computers
+
+```
+$ cd ~ && mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
 ```
 
 ## How to use homebrew
@@ -138,7 +177,8 @@ Time to install all the plugins in my .vimrc
 First, open the Vim.
 
 Then, type 
-```:PluginInstall
+```
+:PluginInstall
 ```
 
 - [ ] Add the screenshot of install process

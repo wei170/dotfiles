@@ -3,16 +3,17 @@
 - [X] Homebrew install
 - [ ] sh install.sh
 - [X] macVim / vim update
-- [ ] Xcode install
+- [X] Xcode install
 - [X] Bundle install
 - [X] Vundle install
-- [ ] Vim plugin install
+- [X] Vim plugin install
 - [X] zsh install
 - [X] Tmux install
 - [X] iTerm install
 - [X] iTerm config (screenshot)
 - [X] ln shell file
 - [ ] Check all on another computer
+- [ ] Move all into a shell file
 
 
 # Get started
@@ -181,8 +182,8 @@ Then, type
 :PluginInstall
 ```
 
-- [ ] Add the screenshot of install process
-- [ ] Check the YouCompleteMe problem
+![Minion](./Images_for_README/SS_VimPlugin.png =200x)
+
 
 ## Solve the YouCompleteMe problem #1
 

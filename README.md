@@ -46,7 +46,7 @@ Homebrew can help you install many widgets in the command lines
 
 !!! IMPORTANT:
 
->If your system is Linux, skip this. Everytime you want to install something just type
+>If your system is Linux, skip this whole section. Everytime you want to install something just type
 
 >
 ```
@@ -78,7 +78,7 @@ If you are one of the Administrators of the computer, add ```sudo ``` and enter 
 $ sudo /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-If not, maybe because you are using school computers
+If not, maybe because you are using public mac desktops.
 
 ```
 $ cd ~ && mkdir homebrew && curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C homebrew
@@ -107,41 +107,6 @@ $ sudo mv /usr/bin/vim /usr/bin/vim72
 $ which vim
 ```
 -- <a href="http://www.prioritized.net/blog/upgrading-vim-on-os-x">Cited from here.</a> </br>
-
-# Bundle
----
-
-Bundler provides a consistent environment for Ruby projects by tracking and installing the exact gems and versions that are needed. 
-
-Bundler is an exit from dependency hell, and ensures that the gems you need are present in development, staging, and production. Starting work on a project is as simple as bundle install. -- <a href="https://bundler.io"> Cited from here.</a>
-
-
-## Install bundle
-
-If you already install homebrew, you can use it:
-
-``` 
-$ brew install bundle
-```
-
-OR, you can use:
-
-```
-$ gem install bundler
-```
-Install all of the required gems from your specified sources:
-
-```
-$ bundle install
-$ git add Gemfile Gemfile.lock
-```
-> The second command adds the Gemfile and Gemfile.lock to your repository. This ensures that other developers on your app, as well as your deployment environment, will all use the same third-party code that you are using now.
-
-Link the bundle in the Vim
-
-```
-brew linkapps
-```
 
 # Vundle
 ---
@@ -182,7 +147,7 @@ Then, type
 :PluginInstall
 ```
 
-![Minion](./Images_for_README/SS_VimPlugin.png =200x)
+![Minion](./Images_for_README/SS_VimPlugin.png  =200x)
 
 
 ## Solve the YouCompleteMe problem #1
@@ -198,7 +163,7 @@ python install.sh
 
 When you open Vim, there are some errors like this:
 
-![Minion](/Users/walterwei/Desktop/Screen Shot 2016-05-31 at 2.57.52 PM.png =500x)
+![Minion](./Images_for_README/Screenshot2.png  =500x)
 
 Check these three things:
 
@@ -295,7 +260,7 @@ Install iTerm2:
 If you like the homebrew theme or any other style, like me, you can change the iterm preference
 `⌘,` and navigate to `Profiles`
 
-![Minion](/Users/walterwei/Desktop/Screen Shot 2016-05-31 at 1.51.17 PM.png =600x)
+![Image](./Images_for_README/Screenshot1.png =600x)
 
 Or, you can draw the `load Presets...` down to `Visit Online Gallery` # I use the Homwbrew theme
 

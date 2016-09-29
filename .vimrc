@@ -11,6 +11,9 @@ call vundle#begin()
 " let vundle manage vundle
 Plugin 'gmarik/vundle'
 
+" Asynchronous execution library for Vim.
+Plugin 'Shougo/vimproc.vim'
+
 " utilities
 Plugin 'kien/ctrlp.vim' " fuzzy find files
 Plugin 'scrooloose/nerdtree' " file drawer, open with :NERDTreeToggle
@@ -25,48 +28,43 @@ Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 " colorschemes
 Plugin 'wei170/badwolf'
 
-" Goyo
-Plugin 'junegunn/goyo.vim'
-Plugin 'junegunn/limelight.vim'
-
 " nerdcommenter
 Plugin 'scrooloose/nerdcommenter'
 " JavaScript plugins
 Plugin 'pangloss/vim-javascript'
-Plugin 'jelera/vim-javascript-syntax'
+Plugin 'othree/javascript-libraries-syntax.vim'
+
+" Angular plugin
+Plugin 'burnettk/vim-angular'
+
+" Typescript
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/tsuquyomi'
 
 " EditorConfig
 Plugin 'wei170/editorconfig-vim'
 
-" powerline-font
-Plugin 'wei170/fonts'
-
-"" Powerline 
-"Plugin 'wei170/powerline'
-"
-"" Airline => AWESOME!!!
-"Plugin 'bling/vim-airline'
-"
-"" powerline-shell
-"Plugin 'wei170/powerline-shell'
-"
 " Jellybeans
 Plugin 'nanotech/jellybeans.vim'
-
-" Textobj-entire
-" Plugin 'vim-scripts/textobj-entire'
 
 " VIim-unimpaired
 Plugin 'tpope/vim-unimpaired'
 
 " You-complete-mw
-Plugin 'wei170/YouCompleteMe' 
+" Plugin 'Valloric/YouCompleteMe' 
 
 " Vim-rails
 Plugin 'tpope/vim-rails'
 
-" vim and tmux navigation combo
+" vim and tmux navigation combo AWESOME !!!
 Plugin 'christoomey/vim-tmux-navigator'
+
+" PHP syntax file
+Plugin 'stanangeloff/php.vim'
+
+" SASS syntax file
+Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
+Plugin 'cakebaker/scss-syntax.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -291,3 +289,4 @@ set colorcolumn=81
 
 " Mouse
 set mouse=a
+

@@ -52,7 +52,8 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+# export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -106,3 +107,11 @@ alias mvim='mvim -v'
 #fi
 
 export PATH="$HOME/.bin:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+source /Users/walterwei/.rvm/scripts/rvm
+
+alias mysql='/usr/local/mysql/bin/mysql'
+
+alias vim='PATH="~/syspy:$PATH" vim'

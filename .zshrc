@@ -115,3 +115,23 @@ source /Users/walterwei/.rvm/scripts/rvm
 alias mysql='/usr/local/mysql/bin/mysql'
 
 alias vim='PATH="~/syspy:$PATH" vim'
+
+###-tns-completion-start-###
+if [ -f /Users/walterwei/.tnsrc ]; then 
+    source /Users/walterwei/.tnsrc 
+fi
+###-tns-completion-end-###
+
+export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+## Maven PATH
+export PATH=/usr/local/apache-maven-3.3.9/bin:$PATH
+## Set JAVA_HOME
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
+export PATH=$JAVA_HOME/bin:$PATH
+
+## zsh vim mode
+bindkey -v

@@ -5,7 +5,7 @@
 " load plugins from vundle
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 " let vundle manage vundle
@@ -26,7 +26,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " colorschemes
-Plugin 'wei170/badwolf'
+Plugin 'sjl/badwolf'
 
 " nerdcommenter
 Plugin 'scrooloose/nerdcommenter'
@@ -42,7 +42,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/tsuquyomi'
 
 " EditorConfig
-Plugin 'wei170/editorconfig-vim'
+Plugin 'editorconfig/editorconfig-vim'
 
 " Jellybeans
 Plugin 'nanotech/jellybeans.vim'
@@ -60,11 +60,15 @@ Plugin 'tpope/vim-rails'
 Plugin 'christoomey/vim-tmux-navigator'
 
 " PHP syntax file
-Plugin 'stanangeloff/php.vim'
+" Plugin 'stanangeloff/php.vim'
+Plugin 'm2mdas/phpcomplete-extended'
 
 " SASS syntax file
 Plugin 'JulesWang/css.vim' " only necessary if your Vim version < 7.4
 Plugin 'cakebaker/scss-syntax.vim'
+
+" React syntax
+" Plugin 'mxw/vim-jsx'
 
 call vundle#end()
 filetype plugin indent on
@@ -290,3 +294,5 @@ set colorcolumn=81
 " Mouse
 set mouse=a
 
+" Solve YCM error
+let g:ycm_server_keep_logfile = 1

@@ -203,6 +203,8 @@ let g:ctrlp_working_path_mode = 2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Guocheng's stuff
 """""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Status Bar Color
+hi StatusLine ctermbg=grey ctermfg=green
 " Color name (:help cterm-colors) or ANSI code
 let g:limelight_conceal_ctermfg = 'gray'
 let g:limelight_conceal_ctermfg = 240
